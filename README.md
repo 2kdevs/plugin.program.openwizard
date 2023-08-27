@@ -4,7 +4,7 @@ OpenWizard
 # Updating
 When this repo is updated, you must:
   - Bump the addon.xml file version (then commit/push)
-  - 'git submodule update --init' on the 2kdevsrepo
+  - 'git submodule update --recursive --remote' on the 2kdevsrepo
   - delete zips and re-run repo_generator
   - commit/push 2kdevsrepo
 
