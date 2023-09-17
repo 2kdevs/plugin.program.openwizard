@@ -43,8 +43,8 @@ TRAKTID = {
         'file'     : os.path.join(CONFIG.TRAKTFOLD, 'fen_trakt'),
         'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.fen', 'settings.xml'),
         'default'  : 'trakt.user',
-        'data'     : ['trakt.user', 'trakt.token', 'trakt.refresh', 'trakt.expires', 'trakt.indicators_active', 'watched_indicators', 'trakt.sync_refresh_widgets'],
-        'activate' : 'RunPlugin(plugin://plugin.video.fen/?mode=trakt.trakt_authenticate)'},
+        'data'     : ['trakt.token', 'trakt.user', 'trakt.refresh', 'trakt.expires', 'watched_indicators'],
+        'activate' : 'RunPlugin(plugin://plugin.video.fen/?mode=trakt.trakt_authenticate())'},
     'seren': {
         'name'     : 'Seren',
         'plugin'   : 'plugin.video.seren',
