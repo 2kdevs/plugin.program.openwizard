@@ -29,7 +29,8 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-ORDER = ['fenad', 'fenpm', 'fenrd',
+ORDER = ['povrd', 'povpm'
+         'fenad', 'fenpm', 'fenrd',
          'gaiaad', 'gaiard', 'gaiapm',
          'pmzer',
          'serenad', 'serenpm', 'serenpm-oauth', 'serenrd', 
@@ -38,6 +39,30 @@ ORDER = ['fenad', 'fenpm', 'fenrd',
          'urlad', 'urlpm', 'urlrd',]
 
 DEBRIDID = {
+    'povrd': {
+        'name'     : 'POV RD',
+        'plugin'   : 'plugin.video.pov',
+        'saved'    : 'povrd',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'pov_rd'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.pov', 'settings.xml'),
+        'default'  : 'rd.account_id',
+        'data'     : ['rd.token', 'rd.enabled', 'rd.account_id', 'rd.client_id', 'rd.refresh', 'rd.secret'],
+        'activate' : 'RunPlugin(plugin://plugin.video.pov/?mode=real_debrid.rd_auth)'},
+    'povpm': {
+        'name'     : 'POV PM',
+        'plugin'   : 'plugin.video.pov',
+        'saved'    : 'povpm',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.DEBRIDFOLD, 'pov_pm'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.pov', 'settings.xml'),
+        'default'  : 'pm.account_id',
+        'data'     : ['pm.account_id', 'pm.token'],
+        'activate' : 'RunPlugin(plugin://plugin.video.pov/?mode=premiumize.pm_auth)'},
     'gaiaad': {
         'name': 'Gaia AD',
         'plugin': 'plugin.video.gaia',

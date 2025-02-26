@@ -29,10 +29,22 @@ from resources.libs.common.config import CONFIG
 from resources.libs.common import logging
 from resources.libs.common import tools
 
-ORDER = ['fen', 'seren', 'exodusredux', 'gaia', 'numbers', 'openmeta', 'premiumizer',
+ORDER = ['pov', 'fen', 'seren', 'exodusredux', 'gaia', 'numbers', 'openmeta', 'premiumizer',
          'realizer', 'scrubs', 'shadow', 'thecrew', 'trakt', 'venom']
 
 TRAKTID = {
+    'pov': {
+        'name'     : 'POV',
+        'plugin'   : 'plugin.video.pov',
+        'saved'    : 'pov',
+        'path'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov'),
+        'icon'     : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'icon.png'),
+        'fanart'   : os.path.join(CONFIG.ADDONS, 'plugin.video.pov', 'fanart.png'),
+        'file'     : os.path.join(CONFIG.TRAKTFOLD, 'pov_trakt'),
+        'settings' : os.path.join(CONFIG.ADDON_DATA, 'plugin.video.pov', 'settings.xml'),
+        'default'  : 'trakt.user',
+        'data'     : ['trakt_user', 'trakt.token', 'trakt.refresh', 'trakt.expires'],
+        'activate' : 'RunPlugin(plugin://plugin.video.pov/?mode=trakt.trakt_auth)'},
     'fen': {
         'name'     : 'Fen',
         'plugin'   : 'plugin.video.fen',
